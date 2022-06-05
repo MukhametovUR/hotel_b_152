@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 // import HomeView from '../views/HomeView.vue'
 import Hotels from '../views/Hotels.vue'
 import Main from '../views/Main.vue'
-// import HotelIdPage from '../views/HotelIdPage'
+import HotelIdPage from '../views/HotelIdPage'
 
 
 const routes = [
@@ -16,10 +16,13 @@ const routes = [
     name: 'hotels',
     component: Hotels
   },
-  // {
-  //   path:'/hotels/:id',
-  //   component:HotelIdPage
-  // },
+  {
+    path:'/hotel/:id',
+    name: 'HotelIdPage',
+    component:HotelIdPage,
+    props: true,
+    //Разрешаем передачу пропсов, для проброса id гостиницы
+  },
   {
     path: '/about',
     name: 'about',

@@ -1,5 +1,12 @@
 <template>
   <div >
+    <div class="header-list">
+      <span class="hotel-item">Название</span>
+      <span class="hotel-item">Стоимость за сутки</span>
+      <span class="hotel-item">Количество звезд</span>
+      <span class="hotel-item">Расстояние до центра</span>
+      <span class="hotel-item"></span>
+    </div>
      <transition-group name="hotel-list">
           <hotel-item
         v-for="hotel in $store.state.hotels"
@@ -39,4 +46,9 @@ name:'hotel-list',
 .hotel-list-move {
   transition: transform 0.8s ease;
 }
+.header-list {
+  display: flex;
+  justify-content: space-between;
+}
+
 </style>

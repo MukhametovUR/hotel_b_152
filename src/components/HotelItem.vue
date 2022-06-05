@@ -2,10 +2,11 @@
 
 <template>
     <div class="hotel"> 
-        <div class="hotel-item">Название <strong> {{ hotel.name }} </strong></div>
-        <div class="hotel-item">Цена за сутки <strong> {{ hotel.price }} </strong></div>
-        <div class="hotel-item">Количество звезд <strong> {{ hotel.stars }} </strong></div>
-        <div class="hotel-item">Расстояние до центра <strong> {{ hotel.distance }} км </strong></div>
+        <div class="hotel-item"> <strong> {{ hotel.name }} </strong></div>
+        <div class="hotel-item"> <strong> {{ hotel.price }} </strong></div>
+        <div class="hotel-item"> <strong> {{ hotel.stars }} </strong></div>
+        <div class="hotel-item"> <strong> {{ hotel.distance }} км </strong></div>
+        <router-link :to="{ name: 'HotelIdPage', params: { id: hotel.id } }" class="menu-item"><my-button >Подробно</my-button></router-link>
     </div>
 </template>
 
@@ -18,6 +19,13 @@ props:{
         type:Object,
         required:true,
     }
+},
+watch: {
+  $route(to, from) {
+    const toDepth = to.path.split('/').length
+    const fromDepth = from.path.split('/').length
+    this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
+  }
 }
 
 
@@ -31,6 +39,10 @@ props:{
     border: 2px solid teal;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+}
+.hotel-item {
+    width: 100px;
+    flex-grow: 1;
 }
 </style>
