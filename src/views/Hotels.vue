@@ -1,0 +1,60 @@
+<template>
+  <div>
+    <h3>Список отелей</h3>
+        <my-select 
+        v-model="selectedSort" 
+        :options="sortOptions"/>
+    <hotel-list/>
+    <comment-form />
+  </div>
+</template>
+
+<script>
+import HotelList from '../components/HotelList.vue'
+import CommentForm from '../components/Forms/CommentForm.vue'
+export default {
+  components: {
+    HotelList,
+    CommentForm,
+  },
+  data:() => ({
+    selectedSort:'',//Создаем модель для привязки к комопненту my-select
+      //Значения выпадающего списка my-select
+    sortOptions: [
+      {value:'name', name:'По возрастанию названию'},
+      {value:'nameRe', name:'По убыванию названию'},
+      {value:'price', name:'По цене'},
+      {value:'stars', name:'По кол. звезд'},
+      {value:'distance', name:'По расстоянию'},
+    ]
+  }),
+  watch: {//Наблюдаемое свойство за моделью selectedSort 
+    selectedSort(newValue){
+      if(newValue === 'name'){
+        this.$store.state.hotels.sort((hotel1, hotel2)=> { //сортировка по алфавиту
+        return hotel1[newValue]?.localeCompare(hotel2[newValue])
+      })
+      if(newValue === 'nameRe'){
+        this.$store.state.hotels.sort((hotel1, hotel2)=> { //сортировка по алфавиту в обратном порядке
+        return hotel2[newValue]?.localeCompare(hotel1[newValue])
+      })
+      }
+      }else{
+         this.$store.state.hotels.sort((a, b)=> {//сортировка по числам
+        return a[newValue] > b[newValue] ? 1 : -1
+      })}
+    }
+  }
+
+
+};
+</script>
+
+<style lang="scss">
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+</style>
