@@ -1,10 +1,7 @@
 <template>
     <form submit.prevent class="form">
-        <h4>Оставит отзыв:</h4>
-        <select class="select-hotel">
-            <option>Выберите гостиницу</option>
-            <option v-for="hotel in $store.state.hotels" :key="hotel.id" >{{hotel.name}}</option>
-        </select>
+      <h4>Оставить отзыв:</h4>
+      <my-input type="text" class="form-input" v-model="name" placeholder="Название" />
       <my-input type="text" class="form-input" v-model="pluses" placeholder="Плюсы" />
       <my-input type="text" class="form-input" v-model="minuses" placeholder="Минусы" />
       <my-input type="text" class="form-input" v-model="comment" placeholder="Комментарий" />
@@ -16,8 +13,9 @@
 <script>
 export default {
 name:'comment-form',
+props: ['id'],
 data: () => ({
-    title: '',
+    name: '',
     pluses:'',
     minuses:'',
     comment:'',
@@ -36,7 +34,7 @@ methods: {
 .form {
     display: flex;
     flex-direction: column;
-    margin: 0 20%;
+    margin: 10% 20%;
     border: 1px solid teal;
     &-input {
         margin: 5px 10px;

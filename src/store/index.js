@@ -8,11 +8,10 @@ export default createStore({
         {id:2, name:'Венера',price:800,stars:3,distance:9},
         {id:3, name:'Олимп',price:900,stars:4,distance:8},
         {id:4, name:'Крокус',price:1000,stars:5,distance:7},
-        {id:5, name:'Yes',price:800,stars:3,distance:9},
-        {id:6, name:'No',price:800,stars:3,distance:9},
+        {id:5, name:'1 ART',price:800,stars:3,distance:9},
+        {id:6, name:'Plaza',price:800,stars:3,distance:9},
         {id:7, name:'Maybe',price:800,stars:3,distance:9},
-
-      ]
+      ],
     }
   },
   getters: {

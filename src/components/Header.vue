@@ -25,6 +25,7 @@ name:'Header'
   padding:10px 0;
   &-item {
     color:#fff;
+    text-decoration: none;
   }
 }
  

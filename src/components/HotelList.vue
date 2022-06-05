@@ -1,12 +1,5 @@
 <template>
-  <div >
-    <div class="header-list">
-      <span class="hotel-item">Название</span>
-      <span class="hotel-item">Стоимость за сутки</span>
-      <span class="hotel-item">Количество звезд</span>
-      <span class="hotel-item">Расстояние до центра</span>
-      <span class="hotel-item"></span>
-    </div>
+  <div class="list-hotels">
      <transition-group name="hotel-list">
           <hotel-item
         v-for="hotel in $store.state.hotels"
@@ -28,7 +21,7 @@ name:'hotel-list',
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .hotel {
     padding: 15px;
     margin-top: 10px;
@@ -50,5 +43,6 @@ name:'hotel-list',
   display: flex;
   justify-content: space-between;
 }
+
 
 </style>
