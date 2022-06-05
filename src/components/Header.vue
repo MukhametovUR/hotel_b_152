@@ -16,6 +16,10 @@ name:'Header'
 <style lang="scss">
 .wrp {}
 .menu {
+  position: fixed;
+  width: 100%;
+  top:0;
+  left: 0;
   display: flex;
   justify-content: space-around;
   flex-direction: row;

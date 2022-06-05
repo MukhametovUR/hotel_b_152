@@ -12,9 +12,7 @@ name:'Footer'
 
 <style>
 .footer {
-   position: fixed;
-   left: 0;
-   bottom: 0;
+  padding: 5px 0;
    width: 100%;
    background-color: blueviolet;
    color: white;

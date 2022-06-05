@@ -2,8 +2,8 @@
   <Header/>
   <div class="wrp">   
   <router-view/>
-  <Footer/>
   </div>
+  <Footer/>
 
 </template>
 
@@ -30,6 +30,6 @@ export default {
 }
 
 .wrp {
-  margin: 0 20%;
+  margin: 50px 20%;
 }
 </style>
