@@ -5,7 +5,6 @@
         v-model="selectedSort" 
         :options="sortOptions"/>
     <hotel-list/>
-    <comment-form />
   </div>
 </template>
 
