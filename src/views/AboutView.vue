@@ -1,19 +1,12 @@
 <template>
-  <h1>Все комментарии</h1>
-  <div v-for="comment in allComments" :key="comment.id">
-    <div>{{comment.title}}</div>
-    <div>{{comment.body}}</div>
-    <div>{{comment.stars}}</div>
-    <div>{{comment.author}}</div>
+  <h1>О нас</h1>
 
-  </div>
+
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
 export default {
-name:"about",
-computed: mapGetters(['allComments'])
+
 }
 </script>
 

@@ -4,14 +4,7 @@
     <my-input
       type="text"
       class="form-input"
-      v-model:value="comment.title"
-      @input="comment.title = $event.target.value"
-      placeholder="Название"
-    />
-    <my-input
-      type="text"
-      class="form-input"
-       v-model:value="comment.body"
+      v-model:value="comment.body"
       @input="comment.body = $event.target.value"
       placeholder="Комментарий"
     />
@@ -54,13 +47,11 @@ export default {
   methods: {
     ...mapMutations(["createComment"]), //Вызываем мутацию vuex
     submit() {
-      if(this.comment.title!='' && this.comment.body!='' && this.comment.stars!='' && this.comment.stars!='author'){
+      if( this.comment.body!='' && this.comment.stars!='' && this.comment.stars!='author'){
         this.createComment({
-        id: Date.now(),
-        title: this.title,
+        // // id: Date.now(),
+        title: this.allHotel[0].name,
         comment: this.comment,
-        stars: this.stars,
-        author: this.author,
       },
       this.comment = {
       id:"",
@@ -70,11 +61,10 @@ export default {
       author: "",
     },
       );
-      }
-      
-      
+      }     
     },
   },
+  computed: mapGetters(["allHotel"])
 };
 </script>
 
