@@ -1,20 +1,18 @@
 <template>
-    <input class="input" type="text">
+  <input class="input" type="text" />
 </template>
 
 <script>
 export default {
-    name: "my-input",
-
-}
-    
+  name: "my-input",
+};
 </script>
 
 <style>
 .input {
-    border: 1px solid teal;
-    margin-top: 15px;
-    height: 40px;
-    padding-left: 10px;
+  border: 1px solid teal;
+  margin-top: 15px;
+  height: 40px;
+  padding-left: 10px;
 }
 </style>

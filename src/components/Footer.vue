@@ -1,21 +1,21 @@
 <template>
   <div class="footer">
-  <p>Copyright © 2022 Гостиницы.рф™. Все права защищены.</p>
-</div>
+    <p>Copyright © 2022 Гостиницы.рф™. Все права защищены.</p>
+  </div>
 </template>
 
 <script>
 export default {
-name:"Footer"
-}
+  name: "Footer",
+};
 </script>
 
 <style>
 .footer {
   padding: 5px 0;
-   width: 100%;
-   background-color: blueviolet;
-   color: white;
-   text-align: center;
+  width: 100%;
+  background-color: blueviolet;
+  color: white;
+  text-align: center;
 }
 </style>

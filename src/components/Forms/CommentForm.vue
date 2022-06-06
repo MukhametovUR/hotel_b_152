@@ -10,7 +10,8 @@
     />
     <my-input
       type="number"
-      min="1" max="5"
+      min="1"
+      max="5"
       class="form-input"
       v-model:value="comment.stars"
       @input="comment.stars = $event.target.value"
@@ -31,10 +32,9 @@
 import { mapMutations } from "vuex";
 import { mapGetters } from "vuex";
 
-
 export default {
   name: "comment-form",
-  props:['id'],
+  props: ["id"],
   data: () => ({
     comment: {
       title: "",
@@ -47,24 +47,29 @@ export default {
   methods: {
     ...mapMutations(["createComment"]), //Вызываем мутацию vuex
     submit() {
-      if( this.comment.body!='' && this.comment.stars!='' && this.comment.stars!='author'){
-        this.createComment({
-        // // id: Date.now(),
-        title: this.allHotel[0].name,
-        comment: this.comment,
-      },
-      this.comment = {
-      id:"",
-      title: "",
-      body: "",
-      stars: "",
-      author: "",
-    },
-      );
-      }     
+      if (
+        this.comment.body != "" &&
+        this.comment.stars != "" &&
+        this.comment.stars != "author"
+      ) {
+        this.createComment(
+          {
+            // // id: Date.now(),
+            title: this.allHotel[0].name,
+            comment: this.comment,
+          },
+          (this.comment = {
+            id: "",
+            title: "",
+            body: "",
+            stars: "",
+            author: "",
+          })
+        );
+      }
     },
   },
-  computed: mapGetters(["allHotel"])
+  computed: mapGetters(["allHotel"]),
 };
 </script>
 
