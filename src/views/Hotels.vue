@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h3>Список гостиниц</h3>
-    <my-select v-model="selectedSort" :options="sortOptions" />
+    <h1>Список гостиниц</h1>
+    <my-select v-model="selectedSort" :options="sortOptions"  class="select-hotels" />
     <hotel-list />
   </div>
 </template>
@@ -26,23 +26,23 @@ export default {
       { value: "distance", name: "По расстоянию" },
     ],
   }),
-  computed: mapGetters(["allHotel"]),
+  computed: mapGetters(["allHotels"]),
   watch: {
     //Наблюдаемое свойство за моделью selectedSort
     selectedSort(newValue) {
       if (newValue === "name") {
-        this.allHotel.sort((hotel1, hotel2) => {
+        this.allHotels.sort((hotel1, hotel2) => {
           //сортировка по алфавиту
           return hotel1[newValue]?.localeCompare(hotel2[newValue]);
         });
         if (newValue === "nameRe") {
-          this.allHotel.sort((hotel1, hotel2) => {
+          this.allHotels.sort((hotel1, hotel2) => {
             //сортировка по алфавиту в обратном порядке
             return hotel2[newValue]?.localeCompare(hotel1[newValue]);
           });
         }
       } else {
-        this.allHotel.sort((a, b) => {
+        this.allHotels.sort((a, b) => {
           //сортировка по числам
           return a[newValue] > b[newValue] ? 1 : -1;
         });
@@ -56,5 +56,9 @@ export default {
 .container {
   display: flex;
   justify-content: space-around;
+}
+.select-hotels {
+  align-items: end;
+  cursor: pointer;
 }
 </style>

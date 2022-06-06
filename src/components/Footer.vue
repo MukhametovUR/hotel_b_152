@@ -12,6 +12,7 @@ export default {
 
 <style>
 .footer {
+  left:0;
   position: fixed;
   bottom: 0;
   padding: 5px 0;

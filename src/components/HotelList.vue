@@ -2,7 +2,7 @@
   <div class="list-hotels">
     <transition-group name="hotel-list">
       <hotel-item
-        v-for="hotel in allHotel"
+        v-for="hotel in allHotels"
         :hotel="hotel"
         :key="hotel.id"
         class="hotel"
@@ -19,7 +19,7 @@ export default {
   components: {
     HotelItem,
   },
-  computed: mapGetters(["allHotel"]), //получаем данные из метода mapGetters vuex
+  computed: mapGetters(["allHotels"]), //получаем данные из метода mapGetters vuex
 };
 </script>
 

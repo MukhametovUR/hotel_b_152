@@ -10,6 +10,7 @@ export default {
 
 <style>
 .input {
+  cursor:pointer;
   border: 1px solid teal;
   margin-top: 15px;
   height: 40px;

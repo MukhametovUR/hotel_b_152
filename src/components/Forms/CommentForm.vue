@@ -46,7 +46,7 @@ export default {
 
   methods: {
     getName(){
-       return this.allHotel[this.$route.params.id-1].name
+       return this.allHotels[this.$route.params.id-1].name
     },
     ...mapMutations(["createComment"]), //Вызываем мутацию vuex
     //Добавляем комментарий в глобальное хранилище vuex
@@ -75,7 +75,7 @@ export default {
       }
     },
   },
-  computed: mapGetters(["allHotel"]),
+  computed: mapGetters(["allHotels"]),
 };
 </script>
 

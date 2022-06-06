@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="hotel in allHotel" :key="hotel.id" class="container">
+    <div v-for="hotel in allHotels" :key="hotel.id" class="container">
       <div v-if="hotel.id == id">
         <h1>Гостиница {{ hotel.name }}</h1>
         <img
@@ -59,7 +59,7 @@ export default {
   //Получили id из vue-router
 
 
-  computed: mapGetters(["allHotel", "allComments"]),
+  computed: mapGetters(["allHotels", "allComments"]),
   //получаем данные из метода mapGetters vuex
 };
 </script>

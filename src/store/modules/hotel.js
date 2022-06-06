@@ -11,7 +11,7 @@ export default {
         ],
     },
     getters: {
-        allHotel(state){
+        allHotels(state){
             return state.hotels
         }
     },

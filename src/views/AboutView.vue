@@ -1,13 +1,22 @@
 <template>
-
-    <h1>Отзывы клиентов </h1>
-    <div v-for="comment in allComments" :key="comment.id" class="comment">
-      <div class="comment-item">Гостиница: <strong>{{comment.title}}</strong></div>
-      <div class="comment-item text">Комментарий: <strong>{{comment.body}}</strong></div>
-      <div class="comment-item">Звезд: <strong>{{comment.stars}}</strong></div>
-      <div class="comment-item">Автор: <strong>{{comment.author}}</strong></div>
+  <h1>Отзывы клиентов</h1>
+  <div v-for="comment in allComments" :key="comment.id" class="comment">
+    <div>
+      <div class="comment-item">
+      Гостиница: <strong>{{ comment.title }}</strong>
     </div>
-<hr>
+    <div class="comment-item">
+      Звезд: <strong>{{ comment.stars }}</strong>
+    </div>
+    <div class="comment-item">
+      Автор: <strong>{{ comment.author }}</strong>
+    </div>
+    </div>
+    <div class="comment-item text">
+      Комментарий: <br><strong>{{ comment.body }}</strong>
+    </div>
+  </div>
+  <hr />
   <!-- <h1>Каким должен быть контент на гостиничном сайте</h1>
   <h2>Адрес и телефон</h2>
   <p>
@@ -47,16 +56,12 @@
     система должна предложить варианты ближайшего заезда. Шаг 2. На этапе выбора
     номера покажите гостю:
   </p> -->
-
-
-
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
+import { mapGetters } from "vuex";
 export default {
-computed: mapGetters(['allComments'])
-
+  computed: mapGetters(["allComments"]),
 };
 </script>
 
@@ -70,13 +75,17 @@ li {
 .comment {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  border: 1px solid teal;
 
   &-item {
     font-size: 20px;
-    width:280px;
+    margin: 10px 0;
+
+    width: 280px;
   }
-.text {
-  width: 600px;
-}
+  .text {
+    width: 600px;
+  }
 }
 </style>

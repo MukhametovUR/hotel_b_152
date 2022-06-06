@@ -59,12 +59,12 @@ export default {
 .hotels {
   display: flex;
   justify-content: space-around;
+  align-items:center;
   flex-grow: 1;
 }
 .hotel {
   &-name {
     color: blue;
-    font-size: 24px;
   }
 }
 </style>
