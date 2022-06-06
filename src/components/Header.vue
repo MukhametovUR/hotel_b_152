@@ -3,7 +3,7 @@
     <!-- vue-router для перехода между страницами -->
     <router-link to="/" class="menu-item">Главная</router-link>
     <router-link to="/hotels" class="menu-item">Гостиницы</router-link>
-    <router-link to="/about" class="menu-item">О нас</router-link>
+    <router-link to="/about" class="menu-item">Отзывы клиентов</router-link>
   </div>
 </template>
 

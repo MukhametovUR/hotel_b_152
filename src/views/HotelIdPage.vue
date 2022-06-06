@@ -44,7 +44,6 @@
       </div>
     </div>
     <CommentForm />
-        <!-- <div>{{allComments}}</div> -->
         
   </div>
 </template>

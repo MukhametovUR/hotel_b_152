@@ -1,5 +1,14 @@
 <template>
-  <h1>Каким должен быть контент на гостиничном сайте</h1>
+
+    <h1>Отзывы клиентов </h1>
+    <div v-for="comment in allComments" :key="comment.id" class="comment">
+      <div class="comment-item">Гостиница: <strong>{{comment.title}}</strong></div>
+      <div class="comment-item text">Комментарий: <strong>{{comment.body}}</strong></div>
+      <div class="comment-item">Звезд: <strong>{{comment.stars}}</strong></div>
+      <div class="comment-item">Автор: <strong>{{comment.author}}</strong></div>
+    </div>
+<hr>
+  <!-- <h1>Каким должен быть контент на гостиничном сайте</h1>
   <h2>Адрес и телефон</h2>
   <p>
     По запросу «гостиница уют» Яндекс покажет 27 миллионов страниц. И если на
@@ -37,18 +46,37 @@
     выбирает в календаре нужные даты. Если на этот период нет свободных номеров,
     система должна предложить варианты ближайшего заезда. Шаг 2. На этапе выбора
     номера покажите гостю:
-  </p>
+  </p> -->
+
+
+
 </template>
 
 <script>
-export default {};
+import {mapGetters} from 'vuex'
+export default {
+computed: mapGetters(['allComments'])
+
+};
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 p {
   text-align: justify;
 }
 li {
   text-align: start;
+}
+.comment {
+  display: flex;
+  justify-content: space-between;
+
+  &-item {
+    font-size: 20px;
+    width:280px;
+  }
+.text {
+  width: 600px;
+}
 }
 </style>

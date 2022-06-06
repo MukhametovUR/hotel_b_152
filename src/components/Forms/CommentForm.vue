@@ -26,7 +26,6 @@
     />
     <my-button type="submit" class="btn-comment">Отправить</my-button>
   </form>
-  <div>{{getName()}}</div>
 </template>
 
 <script>

@@ -1,7 +1,7 @@
 export default {
     state: {
         comments:[
-            {id:1, title:"Колизей",body:"Гостиница",stars:4,author:"Tom"}
+            {id:1, title:"Колизей",body:"Отличная гостиница",stars:4,author:"Tom"}
         ],
     },
     getters: {
