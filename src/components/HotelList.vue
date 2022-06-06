@@ -2,7 +2,7 @@
   <div class="list-hotels">
      <transition-group name="hotel-list">
           <hotel-item
-        v-for="hotel in $store.state.hotels"
+        v-for="hotel in allHotel"
         :hotel="hotel" 
         :key="hotel.id" 
         class="hotel"
@@ -12,12 +12,14 @@
 </template>
 
 <script>
-import HotelItem from './HotelItem.vue'
+import HotelItem from "./HotelItem.vue"
+import {mapGetters} from "vuex"
 export default {
-name:'hotel-list',
+name:"hotel-list",
     components:{
         HotelItem
     },
+computed: mapGetters(["allHotel"]) //получаем данные из метода mapGetters vuex
 }
 </script>
 

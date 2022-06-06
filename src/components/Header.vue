@@ -3,13 +3,13 @@
         <!-- vue-router для перехода между страницами -->
           <router-link to="/" class="menu-item">Главная</router-link>
           <router-link to="/hotels" class="menu-item">Гостиницы</router-link>
-          <router-link to="/about" class="menu-item">О нас</router-link>
+          <router-link to="/about" class="menu-item">Все комментарии</router-link>
       </div>
 </template>
 
 <script>
 export default {
-name:'Header'
+name:"Header"
 }
 </script>
 

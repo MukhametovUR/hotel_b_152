@@ -15,7 +15,7 @@
 
 <script>
 export default {
-name:'hotel-item',
+name:"hotel-item",
 // Пробрасываем пропсы для регистрации экземпяра
 props:{
     hotel:{

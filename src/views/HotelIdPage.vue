@@ -1,6 +1,6 @@
 <template>
   <div>
-      <div v-for="hotel in $store.state.hotels" :key="hotel.id" class="container">
+      <div v-for="hotel in allHotel" :key="hotel.id" class="container">
         <div v-if="hotel.id == id">
           <h1>Гостиница {{hotel.name}}</h1>
           <img src="https://media.radissonhotels.net/image/metropolitan-hotel-sofia-a-member-of-radisson-individuals/exteriorview/16256-145921-f72742573_3xl.jpg?impolicy=Card&gravity=North" class="hotel-img" alt="hotel">
@@ -15,17 +15,27 @@
         </div>
       </div>
       <CommentForm/>
+        <div>{{allComments}}</div>
+
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import CommentForm from '../components/Forms/CommentForm.vue'
 export default {
   components:{
     CommentForm
   },
+  data:()=>({
+    // hotelName:hote.name
+  }),
   props: ['id'],
-//Получили id из vue-router
+  //Получили id из vue-router
+  
+computed: mapGetters(['allHotel','allComments']),  
+//получаем данные из метода mapGetters vuex
+
 
 }
 </script>

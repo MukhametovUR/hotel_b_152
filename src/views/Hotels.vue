@@ -27,6 +27,7 @@ export default {
       {value:'distance', name:'По расстоянию'},
     ]
   }),
+
   watch: {//Наблюдаемое свойство за моделью selectedSort 
     selectedSort(newValue){
       if(newValue === 'name'){
