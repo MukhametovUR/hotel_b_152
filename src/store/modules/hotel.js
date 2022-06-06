@@ -13,9 +13,13 @@ export default {
     getters: {
         allHotels(state){
             return state.hotels
-        }
+        },
+        getFilteredHotels(state) {
+            return state.filteredHotels
+        },
     },
     mutations: {
+
     },
     actions: {
     },

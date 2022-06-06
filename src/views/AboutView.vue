@@ -1,22 +1,24 @@
 <template>
   <h1>Отзывы клиентов</h1>
   <div v-for="comment in allComments" :key="comment.id" class="comment">
-    <div>
       <div class="comment-item">
-      Гостиница: <strong>{{ comment.title }}</strong>
-    </div>
-    <div class="comment-item">
-      Звезд: <strong>{{ comment.stars }}</strong>
-    </div>
-    <div class="comment-item">
-      Автор: <strong>{{ comment.author }}</strong>
-    </div>
-    </div>
+        <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmgRRWWJoxWiRu5d3_NP3vVJNGIuRIlEjsPg&usqp=CAU"
+        class="profile-img"
+        alt="profile"
+      />
+        Автор: <strong>{{ comment.author }}</strong>
+      </div>
+      <div class="comment-item">
+        Гостиница: <strong>{{ comment.title }}</strong>
+      </div>
+      <div class="comment-item">
+        Звезд: <strong>{{ comment.stars }}</strong>
+      </div>      
     <div class="comment-item text">
-      Комментарий: <br><strong>{{ comment.body }}</strong>
+      Комментарий: <br /><strong>{{ comment.body }}</strong>
     </div>
   </div>
-  <hr />
   <!-- <h1>Каким должен быть контент на гостиничном сайте</h1>
   <h2>Адрес и телефон</h2>
   <p>
@@ -72,14 +74,18 @@ p {
 li {
   text-align: start;
 }
+.profile-img {
+  height: 50px;
+}
 .comment {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid teal;
+  flex-direction: column;
+  border:1px solid teal;
+  border-radius: 50px;
 
   &-item {
-    font-size: 20px;
     margin: 10px 0;
 
     width: 280px;
