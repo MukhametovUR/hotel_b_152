@@ -44,11 +44,8 @@
       </div>
     </div>
     <CommentForm />
-
-    <!-- <div v-for="item in allHotel" :key="item.id">
-          <div v-if="item.id == id">{{item.name}}</div>
-        </div>
-        {{allComments}} -->
+        <!-- <div>{{allComments}}</div> -->
+        
   </div>
 </template>
 
@@ -59,20 +56,11 @@ export default {
   components: {
     CommentForm,
   },
-  data: () => ({
-    // hotelName:
-  }),
   props: ["id"],
   //Получили id из vue-router
-  methods: {
-    getName() {
-      allHotel.filter((item) => item.id == id);
-      console.log(item.name);
-    },
-  },
+
 
   computed: mapGetters(["allHotel", "allComments"]),
-
   //получаем данные из метода mapGetters vuex
 };
 </script>

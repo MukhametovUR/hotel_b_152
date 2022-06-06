@@ -26,6 +26,7 @@
     />
     <my-button type="submit" class="btn-comment">Отправить</my-button>
   </form>
+  <div>{{getName()}}</div>
 </template>
 
 <script>
@@ -45,18 +46,24 @@ export default {
   }),
 
   methods: {
+    getName(){
+       return this.allHotel[this.$route.params.id-1].name
+    },
     ...mapMutations(["createComment"]), //Вызываем мутацию vuex
-    submit() {
+    //Добавляем комментарий в глобальное хранилище vuex
+    submit() { 
       if (
         this.comment.body != "" &&
         this.comment.stars != "" &&
-        this.comment.stars != "author"
+        this.comment.author != "author"
       ) {
         this.createComment(
           {
-            // // id: Date.now(),
-            title: this.allHotel[0].name,
-            comment: this.comment,
+            id: Date.now(),
+            title: this.getName(),
+            body: this.comment.body,
+            stars: this.comment.stars,
+            author: this.comment.author            
           },
           (this.comment = {
             id: "",
