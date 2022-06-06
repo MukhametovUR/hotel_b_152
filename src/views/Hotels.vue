@@ -11,6 +11,7 @@
 <script>
 import HotelList from '../components/HotelList.vue'
 import CommentForm from '../components/Forms/CommentForm.vue'
+import {mapGetters} from 'vuex'
 export default {
   components: {
     HotelList,
@@ -27,20 +28,20 @@ export default {
       {value:'distance', name:'По расстоянию'},
     ]
   }),
-
+computed: mapGetters(["allHotel"]),
   watch: {//Наблюдаемое свойство за моделью selectedSort 
     selectedSort(newValue){
       if(newValue === 'name'){
-        this.$store.state.hotels.sort((hotel1, hotel2)=> { //сортировка по алфавиту
+        this.allHotel.sort((hotel1, hotel2)=> { //сортировка по алфавиту
         return hotel1[newValue]?.localeCompare(hotel2[newValue])
       })
       if(newValue === 'nameRe'){
-        this.$store.state.hotels.sort((hotel1, hotel2)=> { //сортировка по алфавиту в обратном порядке
+        this.allHotel.sort((hotel1, hotel2)=> { //сортировка по алфавиту в обратном порядке
         return hotel2[newValue]?.localeCompare(hotel1[newValue])
       })
       }
       }else{
-         this.$store.state.hotels.sort((a, b)=> {//сортировка по числам
+         this.allHotel.sort((a, b)=> {//сортировка по числам
         return a[newValue] > b[newValue] ? 1 : -1
       })}
     }
