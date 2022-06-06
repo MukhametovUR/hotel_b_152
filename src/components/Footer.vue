@@ -12,6 +12,8 @@ export default {
 
 <style>
 .footer {
+  position: fixed;
+  bottom: 0;
   padding: 5px 0;
   width: 100%;
   background-color: blueviolet;

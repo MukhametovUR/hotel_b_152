@@ -43,6 +43,9 @@ export default {
 }
 .header-list {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; 
+}
+.list-hotels {
+  margin-bottom: 100px;
 }
 </style>

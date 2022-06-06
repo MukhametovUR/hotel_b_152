@@ -12,16 +12,16 @@
         <strong> {{ hotel.name }} </strong>
       </div>
       <div class="hotel-stars" v-if="hotel.stars >= 5">
-        <strong> {{ hotel.stars }} звезд</strong>
+        <strong> {{ hotel.stars }} </strong> звезд
       </div>
       <div class="hotel-stars" v-if="hotel.stars < 5">
-        <strong> {{ hotel.stars }} звезды</strong>
+        <strong> {{ hotel.stars }} </strong> звезды
       </div>
       <div class="hotel-price">
-        <strong> {{ hotel.price }} р. за сутки </strong>
+        <strong> {{ hotel.price }} </strong> р. за сутки
       </div>
       <div class="hotel-distance">
-        <strong> {{ hotel.distance }} км до центра</strong>
+        <strong> {{ hotel.distance }} </strong> км до центра
       </div>
     </div>
     <router-link :to="{ name: 'HotelIdPage', params: { id: hotel.id } }"

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>Список отелей</h3>
+    <h3>Список гостиниц</h3>
     <my-select v-model="selectedSort" :options="sortOptions" />
     <hotel-list />
   </div>
